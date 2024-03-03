@@ -23,7 +23,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                 dcc.Dropdown(id='site-dropdown',options=[
                                     {"label":"All Sites","value":"All"}, 
                                     ]+[{"label":i,"value":i} for i in pd.unique(spacex_df["Launch Site"])],
-                                    value='ALL', placeholder="place holder here", searchable=True 
+                                    value='All', placeholder="place holder here", searchable=True 
                                     ),
                                 html.Br(),
 
@@ -52,7 +52,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 def get_pie_chart(entered_site):
     #filtered_df = spacex_df
 
-    if entered_site =="ALL":
+    if entered_site =="All":
         df=spacex_df
         fig = px.pie(df, 
             values='class', 
